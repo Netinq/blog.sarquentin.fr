@@ -1,0 +1,101 @@
+footer {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: #FFFFFF;
+}
+footer .top
+{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+    width: 100%;
+    position: relative;
+}
+footer .list
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-self: stretch;
+    position: relative;
+}
+@media (max-width: 679px)
+{
+    footer .list
+    {
+        justify-content: space-evenly;
+    }
+}
+footer .list .elem
+{
+    display: flex;
+    flex-direction: column;
+    flex: none;
+    width: calc(25% - 50px);
+    margin: 25px;
+    justify-content: center;
+    padding-left: 50px;
+    box-sizing: border-box;
+}
+@media (max-width: 1100px) {
+    footer .list .elem
+    {
+        width: calc(50% - 50px);
+    }
+}
+@media (max-width: 600px) {
+    footer .list .elem
+    {
+        width: calc(80% - 50px);
+    }
+}
+footer .list .elem a
+{
+    margin-left: 5px;
+    color: #393939;
+}
+footer .list .elem p
+{
+    margin: 0;
+    margin-left: 5px;
+    color: #393939;
+}
+footer .list .elem .point {
+    position: relative;
+    margin-left: 25px;
+}
+footer .list .elem .link {
+    color: #71ACFA;
+    text-decoration: underline;
+}
+footer .list .elem .point::after
+{
+    content: ' ';
+    position: absolute;
+    top: calc(50% - 5px);
+    left: -25px;
+    height: 10px;
+    width: 10px;
+    background-color: var(--main);
+}
+footer .top::after
+{
+    content: ' ';
+    position: absolute;
+    left: 5%;
+    width: 90%;
+    height: 1px;
+    bottom: 0;
+    background-color: #393939;
+}
+
+footer .bottom
+{
+    margin-bottom: 20px;
+    width: 100vw;
+    text-align: center;
+    font-variation-settings: "wght" 200;
+}

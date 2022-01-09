@@ -1,0 +1,125 @@
+body {
+    margin: 0;
+    background-color: #fcfcfc;
+    position: relative;
+}
+
+main#home {
+    width: calc(100vw - var(--margin));
+    margin: calc(var(--margin) / 2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+}
+
+main#home section#intro {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 70vh;
+    width: 100%;
+}
+main#home section#intro div.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+main#home section#intro div.title h1 {
+    color: #1d1d1d;
+    font-family: "Main";
+    font-size: 5rem;
+    margin: 0;
+}
+main#home section#intro div.title h1 span {
+    color: var(--main);
+}
+main#home section#intro div.title p {
+    margin: 0;
+    color: #1d1d1d;
+    font-family: "Main";
+    font-size: 1.5rem;
+}
+
+main#home section#intro img {
+    max-width: 55vw;
+    max-height: 100%;
+}
+
+main#home section#articles {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+}
+main#home section#articles nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+main#home section#articles nav button {
+    border: none;
+    background: none;
+    color: #828282;
+    font-family: "Main";
+    font-size: 1.1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    cursor: pointer;
+}
+main#home section#articles nav button img {
+    height: 15px;
+    margin-right: 5px;
+}
+
+@media (max-width: 1200px) {
+    main#home section#intro div.title h1 {
+        font-size: 4rem;
+    }
+    main#home section#intro img {
+        max-width: 50vw;
+    }
+}
+@media (max-width: 991px) {
+    main#home {
+        overflow: hidden;
+    }
+    main#home section#intro div.title h1 {
+        font-size: 3rem;
+    }
+    main#home section#intro img {
+        max-width: 45vw;
+    }
+}
+@media (max-width: 787px) {
+    main#home section#intro {
+        flex-direction: column;
+        justify-content: center;
+        height: 50vh;
+    }
+    main#home section#intro div.title {
+        order: 2;
+    }
+    main#home section#intro img {
+        order: 1;
+    }
+    main#home section#articles nav {
+        width: 100%;
+        overflow-y: scroll;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    main#home section#articles nav::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+    }
+}
