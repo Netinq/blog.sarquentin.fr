@@ -87,7 +87,7 @@ class HomeController extends Controller
                 $q->where('html', 'LIKE', '%'.$search.'%')
                     ->orWhere('name', 'LIKE', '%'.$search.'%')
                     ->orWhereHas('categories', function($query) use ($search) {
-                        $query->whereIn('name', 'LIKE', '%'.$search.'%');
+                        $query->where('name', 'LIKE', '%'.$search.'%');
                     });
             })
             ->get();
