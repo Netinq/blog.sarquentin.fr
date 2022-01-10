@@ -53,14 +53,16 @@
                 crossorigin="anonymous"></script>
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4BXNV9T6T5"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132838792-2"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
-            gtag('config', 'G-4BXNV9T6T5');
+            gtag('config', 'UA-132838792-2');
         </script>
+
 
     </head>
          @include('layouts.header')
