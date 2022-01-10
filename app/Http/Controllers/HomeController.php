@@ -83,10 +83,12 @@ class HomeController extends Controller
                 $join->on('article_contents.updated_at', '=',
                 DB::raw('(select max(updated_at) from article_contents where article_id = articles.id)'));
             })
-            ->whereIn('html', 'LIKE', '%'.$search.'%')
-            ->WhereIn('name', 'LIKE', '%'.$search.'%')
-            ->WhereHas('categories', function($query) use ($search) {
-                $query->whereIn('name', 'LIKE', '%'.$search.'%');
+            ->where(function($q) use ($search){
+                $q->where('html', 'LIKE', '%'.$search.'%')
+                    ->orWhere('name', 'LIKE', '%'.$search.'%')
+                    ->orWhereHas('categories', function($query) use ($search) {
+                        $query->whereIn('name', 'LIKE', '%'.$search.'%');
+                    });
             })
             ->get();
 
