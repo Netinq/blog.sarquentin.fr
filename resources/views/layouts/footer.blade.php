@@ -17,7 +17,8 @@
         </div>
         <div class="elem">
             <h3>Informations</h3>
-            <a class="link" href="#">Mentions légales</a>
+            <a class="link" href="{{route('legal')}}">Mentions légales</a>
+            <a class="link" href="https://sarquentin.fr" target="_blank">Mon entreprise</a>
         </div>
     </div>
     <div class="bottom">

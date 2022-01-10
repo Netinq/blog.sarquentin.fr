@@ -11,6 +11,8 @@ Route::get('/dataactu', [HomeController::class, 'dataactu'])->name('dataactu');
 Route::get('/articles', [HomeController::class, 'search'])->name('search');
 Route::get('/articles/{link}', [HomeController::class, 'article'])->name('article');
 
+Route::get('/legal', function() {return view('legal');})->name('legal');
+
 Route::post('/read', [HomeController::class, 'read_time'])->name('read');
 
 Route::group(['prefix' => 'gestion'], function () {
