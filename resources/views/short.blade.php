@@ -5,7 +5,9 @@
         <header id="categories-head" style="background-image: url('{{asset('img/short.jpg')}}')">
             <div>
                 <h1>Nos articles courts</h1>
-                <span><img src="{{asset('img/time_light.svg')}}" alt="Time"> Temps de lecture moyen {{$avg_read_time}} min</span>
+                @if ($avg_read_time != 0)
+                    <span><img src="{{asset('img/time_light.svg')}}" alt="Time"> Temps de lecture moyen {{$avg_read_time}} min</span>
+                @endif
             </div>
         </header>
         <section id="articles">

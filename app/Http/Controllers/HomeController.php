@@ -56,7 +56,8 @@ class HomeController extends Controller
             $diviser++;
             $read_time += $article->read_time;
         }
-        $avg_read_time = floor($read_time / $diviser);
+        if ($diviser != 0) $avg_read_time = floor($read_time / $diviser);
+        else $avg_read_time = 0;
         return view('short', compact('articles', 'avg_read_time'));
     }
 
