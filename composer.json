@@ -13,6 +13,7 @@
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "orangehill/iseed": "^3.0",
+        "spatie/laravel-sitemap": "^6.0",
         "tcg/voyager": "^1.5"
     },
     "require-dev": {

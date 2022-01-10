@@ -13,34 +13,70 @@ var scrollPos = [];
 var previous = 0;
 var summaryOffset = offset(summary);
 var index = 0;
-Array.from(titles).forEach(function (title) {
-  title.id = '#' + clean(title.innerText);
+
+function summaryDisplay() {
+  summary.innerHTML = '';
+
+  if (window.innerWidth >= 991) {
+    setup();
+    document.addEventListener('scroll', function (e) {
+      return scroll();
+    });
+  } else {
+    setupShort();
+    document.addEventListener('scroll', function (e) {
+      return scrollShort();
+    });
+  }
+}
+
+function setup() {
+  Array.from(titles).forEach(function (title) {
+    title.id = '#' + clean(title.innerText);
+    var elem = document.createElement("button");
+    var bar = document.createElement("div");
+    var barbg = document.createElement("div");
+    bar.classList.add("bar");
+    barbg.classList.add("bar-bg");
+    elem.classList.add("title");
+
+    elem.onclick = function () {
+      window.scroll({
+        top: offset(title).top - 75 - 50,
+        behavior: 'smooth'
+      });
+    };
+
+    elem.innerText = title.innerText;
+    summary.appendChild(elem);
+    elem.appendChild(barbg);
+    barbg.appendChild(bar);
+
+    if (index != 0) {
+      scrollPos.push([previous, offset(title).top - 75 - 50]);
+      previous = offset(title).top - 75 - 50;
+    }
+
+    index++;
+
+    if (index === Array.from(titles).length) {
+      scrollPos.push([previous, offset(document.querySelector("#content")).top + document.querySelector("#content").clientHeight]);
+    }
+  });
+}
+
+function setupShort() {
   var elem = document.createElement("button");
   var bar = document.createElement("div");
   var barbg = document.createElement("div");
   bar.classList.add("bar");
   barbg.classList.add("bar-bg");
   elem.classList.add("title");
-
-  elem.onclick = function () {
-    window.scroll({
-      top: offset(title).top - 75 - 50,
-      behavior: 'smooth'
-    });
-  };
-
-  elem.innerText = title.innerText;
+  elem.innerText = "Lecture en cours";
   summary.appendChild(elem);
   elem.appendChild(barbg);
   barbg.appendChild(bar);
-
-  if (index != 0) {
-    scrollPos.push([previous, offset(title).top - 75 - 50]);
-    previous = offset(title).top - 75 - 50;
-  }
-
-  index++;
-});
+}
 
 function offset(el) {
   var rect = el.getBoundingClientRect(),
@@ -57,7 +93,7 @@ function clean(string) {
   return string;
 }
 
-document.addEventListener('scroll', function (e) {
+function scroll() {
   var bar = document.querySelectorAll('.bar');
   var scroll = window.scrollY;
   if (scroll >= summaryOffset.top - 75 && !summary.classList.contains('attach')) summary.classList.add("attach");else if (scroll < summaryOffset.top - 75 && summary.classList.contains('attach')) summary.classList.remove("attach");
@@ -77,6 +113,18 @@ document.addEventListener('scroll', function (e) {
 
     index++;
   });
+}
+
+function scrollShort() {
+  var bar = document.querySelector('.bar');
+  var scroll = window.scrollY;
+  if (scroll >= summaryOffset.top - 75 && !summary.classList.contains('attach')) summary.classList.add("attach");else if (scroll < summaryOffset.top - 75 && summary.classList.contains('attach')) summary.classList.remove("attach");
+  bar.style.width = scroll * 100 / (offset(document.querySelector("#content")).top + document.querySelector("#content").clientHeight) + '%';
+}
+
+summaryDisplay();
+window.addEventListener('resize', function () {
+  return summaryDisplay();
 });
 
 /***/ }),

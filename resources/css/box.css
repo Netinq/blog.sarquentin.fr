@@ -163,14 +163,13 @@ div.self-promo img {
     transform: translateX(40%);
     z-index: 11;
 }
-div.self-promo h2 {
+div.self-promo h3 {
     color: #1d1d1d;
     font-family: "Main";
     font-size: 1.5rem;
     font-weight: bold;
     width: 60%;
-    margin: 0;
-    margin-top: 15px;
+    margin: 15px 0 0;
     z-index: 11;
 }
 div.self-promo p {
@@ -178,8 +177,7 @@ div.self-promo p {
     font-family: "Main";
     font-size: 1.2rem;
     width: 60%;
-    margin: 0;
-    margin-top: 15px;
+    margin: 15px 0 0;
     z-index: 11;
 }
 div.self-promo div {

@@ -63,7 +63,7 @@ main#home section#articles nav {
     align-items: center;
 }
 
-main#home section#articles nav button {
+main#home section#articles nav a {
     border: none;
     background: none;
     color: #828282;
@@ -76,11 +76,10 @@ main#home section#articles nav button {
     padding: 25px;
     cursor: pointer;
 }
-main#home section#articles nav button img {
+main#home section#articles nav a img {
     height: 15px;
     margin-right: 5px;
 }
-
 @media (max-width: 1200px) {
     main#home section#intro div.title h1 {
         font-size: 4rem;

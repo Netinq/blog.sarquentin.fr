@@ -17,21 +17,21 @@
 
         <meta name='language' content='FR'>
         <meta name='target' content='all'>
-        <meta name='theme-color' content='#E3B64F'>
+        <meta name='theme-color' content='#e3b64f'>
 
         <link rel='shortcut icon' type='image/png' href='{{ asset('img/logo.png') }}'>
         <link rel="apple-touch-icon" href="{{ asset('img/logo.png') }}" />
 
         <!-- Twitter Card meta -->
         <meta name='twitter:card' content='summary'>
-        <meta name="twitter:title" content="@hasSection('title') @yield('title') @else Le Blog Digital @endif" />
+        <meta name="twitter:title" content="@hasSection('title')@yield('title')@else Le Blog Digital @endif" />
         <meta name='twitter:url' content='https://blog.sarquentin.fr' />
         <meta name='twitter:domain' content='blog.sarquentin.fr' />
         <meta name="twitter:description" content="@yield('description')" />
         <meta name="twitter:image" content="{{asset('img/meta.png')}}" />
 
         <!-- Open Graph meta -->
-        <meta property='og:title' content="@hasSection('title') @yield('title') @else Le Blog Digital @endif" />
+        <meta property='og:title' content="@hasSection('title')@yield('title')@else Le Blog Digital @endif" />
         <meta property="og:description" content="@yield('description')" />
         <meta property="og:image" content="{{asset('img/meta.png')}}" />
         <meta property='og:type' content='website' />
@@ -43,11 +43,24 @@
         <meta name="apple-mobile-web-app-title" content="{{Config::get('app.name')}}">
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        @hasSection ('head')@yield('head')@endif
+        @hasSection('head')@yield('head')@endif
 
-        <title>@hasSection('title') @yield('title') @else Le Blog Digital @endif</title>
+        <title>@hasSection('title')@yield('title')@else Le Blog Digital @endif</title>
 
         <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
+
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4501219983180544"
+                crossorigin="anonymous"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4BXNV9T6T5"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-4BXNV9T6T5');
+        </script>
 
     </head>
          @include('layouts.header')

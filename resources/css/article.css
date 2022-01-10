@@ -16,6 +16,7 @@ article#page {
     position: relative;
     overflow: hidden;
     cursor: auto;
+    padding-bottom: 100px;
 }
 
 article#page header#article-head {
@@ -55,6 +56,7 @@ article#page header#article-head div time{
     font-family: 'Main';
     color: #FFFFFF;
     font-size: 1.2rem;
+    margin-bottom: 5px;
 }
 article#page header#article-head div h1{
     font-family: 'Main';
@@ -79,11 +81,12 @@ article#page nav {
     flex-grow: 1;
     height: 50px;
     background-color: #FFFFFF;
+    overflow: hidden;
 }
 article#page nav.attach {
     position: fixed;
     top: 75px;
-    z-index: 100;
+    z-index: 1000;
 }
 article#page nav button {
     width: 100%;
@@ -106,6 +109,7 @@ article#page nav button div.bar-bg {
     height: 3px;
     background-color: #ECECEC;
     padding: 0;
+    overflow: hidden;
 }
 article#page nav button div.bar {
     position: absolute;
@@ -171,9 +175,29 @@ article#page section#content p img {
     border: 5px solid #f3f3f3;
     box-sizing: border-box;
 }
+section.promo-content {
+    width: calc(100% - var(--margin));
+    margin: 0 calc(var(--margin) / 2);
+    z-index: 1;
+    position: relative;
+}
 @media (max-width: 1200px) {
+    article#page nav button {
+        font-size: .8rem;
+    }
+    article#page header#article-head div h1{
+        font-size: 2.4rem;
+        width: 50%;
+    }
 }
 @media (max-width: 991px) {
+    article#page nav button {
+        font-size: .7rem;
+    }
+    article#page header#article-head div h1{
+        font-size: 2rem;
+        width: 65%;
+    }
 }
 @media (max-width: 787px) {
 }

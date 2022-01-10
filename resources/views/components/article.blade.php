@@ -33,7 +33,7 @@
                 "datePublished" : {!! json_encode($article->published_at) !!},
                 "headline" : {!! json_encode($article->name, JSON_UNESCAPED_UNICODE ) !!},
                 "image" : "{!! asset('storage/'.str_replace('\\', '/', $article->image)) !!}",
-                "mainEntityOfPage" : "TODO"
+                "mainEntityOfPage" : "{!! route('article', ['link' => $article->link]) !!}"
             }
     </script>
 @endsection

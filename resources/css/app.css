@@ -4,5 +4,7 @@
 @import "box.css";
 @import "search.css";
 @import "article.css";
+@import "categories.css";
+@import "social.css";
 @import 'layouts/header.css';
 @import 'layouts/footer.css';
