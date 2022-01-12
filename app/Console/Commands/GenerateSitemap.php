@@ -46,7 +46,9 @@ class GenerateSitemap extends Command
                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
                 ->setPriority(0.7))
             ->add(Url::create('/dataactu')
-                ->setLastModificationDate(Carbon::createFromTimeString(Article::published() != null ? Article::published()->with('categories')
+                ->setLastModificationDate(Carbon::createFromTimeString(Article::published()->whereHas('categories', function($query) {
+                    $query->where('name', 'LIKE', 'DataActu');
+                    }) != null ? Article::published()->with('categories')
                     ->whereHas('categories', function($query) {
                         $query->where('name', 'LIKE', 'DataActu');
                     })->orderBy('published_at', 'desc')->first()->published_at : Article::published()->orderBy('published_at', 'desc')->first()->published_at))
