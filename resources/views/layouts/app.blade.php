@@ -72,7 +72,7 @@
               "@type": "EntryPoint",
               "urlTemplate": "https://blog.sarquentin.fr/articles?search={search_term_string}"
             },
-            "query-input": "required search=search_term_string"
+            "query-input": "required name=search_term_string"
           }
         }
         </script>
