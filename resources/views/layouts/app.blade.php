@@ -53,7 +53,6 @@
                 crossorigin="anonymous"></script>
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
-        <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132838792-2"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
@@ -62,8 +61,21 @@
 
             gtag('config', 'UA-132838792-2');
         </script>
-
-
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "url": "https://blog.sarquentin.fr/",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://blog.sarquentin.fr/articles?search={search_term_string}"
+            },
+            "query-input": "required search=search_term_string"
+          }
+        }
+        </script>
     </head>
          @include('layouts.header')
          @yield('content')
