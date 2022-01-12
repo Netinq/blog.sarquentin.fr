@@ -2,6 +2,7 @@
 
 @section('title', $article->name)
 @section('description', $article->description)
+@section('image', asset('storage/'.str_replace('\\', '/', $article->image)))
 
 @section('content')
     @include('components.share', ['txt' => $article->name, 'url' => route('article', ['link' => $article->link])])

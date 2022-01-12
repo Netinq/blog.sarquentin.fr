@@ -5,7 +5,7 @@
         </a>
         <div class="nav">
             <form action="{{route('search')}}" method="GET">
-                <input type="search" name="search" placeholder="Actu, Data..." value="@isset($search){{$search}}@endisset">
+                <input type="search" name="search" placeholder="Rechercher..." value="@isset($search){{$search}}@endisset">
                 <button type="submit"><img src="{{asset('img/search.svg')}}" alt="Search icon"></button>
             </form>
 {{--            <button type="button"><img src="{{asset('img/burger.svg')}}" alt="Burger menu icon"></button>--}}

@@ -28,12 +28,12 @@
         <meta name='twitter:url' content='https://blog.sarquentin.fr' />
         <meta name='twitter:domain' content='blog.sarquentin.fr' />
         <meta name="twitter:description" content="@yield('description')" />
-        <meta name="twitter:image" content="{{asset('img/meta.png')}}" />
+        <meta name="twitter:image" content="@hasSection('image')@yield('image')@else{{asset('img/meta.png')}}@endif" />
 
         <!-- Open Graph meta -->
         <meta property='og:title' content="@hasSection('title')@yield('title')@else Le Blog Digital @endif" />
         <meta property="og:description" content="@yield('description')" />
-        <meta property="og:image" content="{{asset('img/meta.png')}}" />
+        <meta property="og:image" content="@hasSection('image')@yield('image')@else{{asset('img/meta.png')}}@endif" />
         <meta property='og:type' content='website' />
         <meta property='og:url' content='https://blog.sarquentin.fr' />
         <meta property='og:site_name' content='{{Config::get('app.name')}}' />

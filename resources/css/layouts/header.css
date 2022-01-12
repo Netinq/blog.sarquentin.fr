@@ -57,7 +57,7 @@ header#menu div.container div.nav form input {
     background-color: #f6f6f6;
     border: none !important;
     outline: none !important;
-    cursor: pointer;
+    cursor: text;
     padding: 15px 25px;
 }
 header#menu div.container div.nav button {
