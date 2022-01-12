@@ -121,8 +121,9 @@ article#page nav button div.bar {
     padding: 0;
 }
 article#page section#content {
-    width: calc(100% - var(--margin));
+    width: calc(100% - var(--article-margin));
     margin: 0 calc(var(--margin) / 2);
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
