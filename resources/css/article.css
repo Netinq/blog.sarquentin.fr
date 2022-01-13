@@ -87,18 +87,23 @@ article#page nav.attach {
     position: fixed;
     top: 75px;
     z-index: 1000;
+    background-color: #f6f6f6;
 }
 article#page nav button {
     width: 100%;
     height: 100%;
     border: none;
-    background-color: #FFFFFF;
     text-align: left;
     font-family: 'Main';
+    background: none;
     font-size: .9rem;
     cursor: pointer;
     position: relative;
     display: block;
+    transition: .3s all;
+}
+article#page nav button:hover {
+    color: var(--main);
 }
 article#page nav button div.bar-bg {
     content: ' ';
@@ -161,7 +166,9 @@ article#page section#content blockquote::before {
     background-color: var(--main);
 }
 article#page section#content p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    color: #51656f;
     width: 100%;
 }
 article#page section#content p img {

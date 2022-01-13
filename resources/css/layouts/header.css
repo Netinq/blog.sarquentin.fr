@@ -42,17 +42,17 @@ header#menu div.container div.nav form {
     padding: 0;
 }
 header#menu div.container div.nav img {
-    height: 35px;
+    height: 25px;
 }
 header#menu div.container div.nav form button {
-    height: 100%;
-    width: 75px;
+    height: 55px;
+    width: 55px;
     background-color: var(--main);
     border: none;
     cursor: pointer;
 }
 header#menu div.container div.nav form input {
-    height: 100%;
+    height: 55px;
     width: 225px;
     background-color: #f6f6f6;
     border: none !important;

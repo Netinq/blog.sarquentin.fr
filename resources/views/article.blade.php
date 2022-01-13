@@ -31,6 +31,8 @@
 @endsection
 
 @section('head')
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4501219983180544"
+            crossorigin="anonymous"></script>
     <script type="application/ld+json">
             {
                 "@context" : "https://schema.org",

@@ -49,9 +49,6 @@
 
         <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
 
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4501219983180544"
-                crossorigin="anonymous"></script>
-
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132838792-2"></script>
         <script>
