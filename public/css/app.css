@@ -817,6 +817,7 @@ article#page section#content p {
     line-height: 1.8rem;
     color: #51656f;
     width: 100%;
+    text-align: justify;
 }
 
 article#page section#content p img {
