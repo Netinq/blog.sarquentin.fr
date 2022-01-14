@@ -70,7 +70,6 @@ header#menu div.container div.nav button {
 
 @media (max-width: 787px) {
     header#menu div.container div.nav form input {
-        height: 100%;
         width: 65%;
     }
 }
