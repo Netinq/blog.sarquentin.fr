@@ -23,7 +23,7 @@
         <link rel="apple-touch-icon" href="{{ asset('img/logo.png') }}" />
 
         <!-- Twitter Card meta -->
-        <meta name='twitter:card' content='summary'>
+        <meta name='twitter:card' content='summary_large_image'>
         <meta name="twitter:title" content="@hasSection('title')@yield('title')@else Le Blog Digital @endif" />
         <meta name='twitter:url' content='https://blog.sarquentin.fr' />
         <meta name='twitter:domain' content='blog.sarquentin.fr' />
@@ -77,5 +77,6 @@
          @include('layouts.header')
          @yield('content')
          @include('layouts.footer')
+         @yield('before')
     </body>
 </html>
