@@ -4,4 +4,4 @@ ENV TEMPLATE_PHP_INI=production
 COPY --chown=docker:docker . /var/www/html
 RUN composer install --quiet --optimize-autoloader --no-dev
 FROM php_base
-COPY --from=node_dependencies --chown=docker:docker /var/www/html /var/www/html
+COPY --chown=docker:docker /var/www/html /var/www/html
