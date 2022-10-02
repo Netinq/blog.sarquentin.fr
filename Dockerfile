@@ -1,10 +1,33 @@
-ARG PHP_EXTENSIONS="apcu bcmath opcache pcntl pdo_mysql redis zip sockets imagick gd exif"
-FROM thecodingmachine/php:8.1-v4-apache as php_base
-ENV TEMPLATE_PHP_INI=production
-COPY --chown=docker:docker . /var/www/html
-RUN composer install --quiet --optimize-autoloader --no-dev
-FROM node:10 as node_dependencies
-WORKDIR /var/www/html
-ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=false
-COPY --from=php_base /var/www/html /var/www/html
-FROM php_base
+FROM php:8.0-fpm
+COPY ./www/* /usr/share/nginx/html/
+WORKDIR /usr/share/nginx/html
+USER root
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libpng-dev \
+    libjpeg62-turbo-dev \
+    libfreetype6-dev \
+    locales \
+    zip \
+    jpegoptim optipng pngquant gifsicle \
+    vim \
+    unzip \
+    git \
+    curl \
+    libonig-dev \
+    libzip-dev
+RUN docker-php-ext-configure gd --with-jpeg
+RUN docker-php-ext-install pdo pdo_mysql zip exif
+RUN docker-php-ext-install gd
+RUN docker-php-ext-enable pdo_mysql gd
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN cd /usr/local/etc/php/conf.d/ && \
+  echo 'memory_limit = -1' >> /usr/local/etc/php/conf.d/docker-php-ram-limit.ini
+RUN userdel www
+RUN groupadd -g 1000 www
+RUN useradd -u 1000 -ms /bin/bash -g www www
+COPY --chown=www:www ./www /usr/share/nginx/html
+USER www
+EXPOSE 9000
+CMD ["php-fpm"]
