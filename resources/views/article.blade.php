@@ -16,6 +16,7 @@
         </header>
         <nav id="summary"></nav>
         <section id="content">
+            <h2 id="sommaire">Sommaire</h2>
             {!! $article->html !!}
         </section>
     </article>
@@ -23,6 +24,7 @@
     @include('components.promo')
     </section>
     <script src="{{asset('js/summary.js')}}"></script>
+    <script src="{{asset('js/sommaire.js')}}"></script>
     <form method="POST" action="{{route('read')}}" id="read">
         @csrf
         <input hidden name="article_id" value="{{$article->id}}">

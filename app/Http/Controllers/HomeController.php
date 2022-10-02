@@ -69,6 +69,11 @@ class HomeController extends Controller
                     DB::raw('(select max(updated_at) from article_contents where article_id = articles.id)'));
             })->first();
         if ($article == null) return abort(404);
+
+
+        preg_match_all('/<h[2-6]>(.*?)<\/h[2-6]>/i', $article->html, $titles);
+        dd($titles);
+
         if ($article->published_at == null && !$article->link_only) return abort(403);
         else return view('article', compact('article'));
     }
