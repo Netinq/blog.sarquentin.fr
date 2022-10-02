@@ -1,5 +1,5 @@
 FROM php:8.0-fpm
-COPY ./www/* /usr/share/nginx/html/
+COPY . /usr/share/nginx/html/
 WORKDIR /usr/share/nginx/html
 USER root
 RUN apt-get update && apt-get install -y \
@@ -27,7 +27,7 @@ RUN cd /usr/local/etc/php/conf.d/ && \
 RUN userdel www
 RUN groupadd -g 1000 www
 RUN useradd -u 1000 -ms /bin/bash -g www www
-COPY --chown=www:www ./www /usr/share/nginx/html
+COPY --chown=www:www . /usr/share/nginx/html
 USER www
 EXPOSE 9000
 CMD ["php-fpm"]
