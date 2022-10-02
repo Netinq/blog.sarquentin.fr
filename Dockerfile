@@ -24,4 +24,7 @@ RUN cd /usr/local/etc/php/conf.d/ && \
 RUN useradd -G www-data,root -d /home/laravel laravel
 RUN mkdir -p /home/laravel/.composer && \
     chown -R laravel:laravel /home/laravel
+RUN composer install
+RUN php artisan migrate
+RUN php artisan db:seed
 USER laravel
