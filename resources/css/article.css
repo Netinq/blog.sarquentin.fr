@@ -141,8 +141,11 @@ article#page section#content {
     overflow: hidden;
     cursor: auto;
 }
+article#page section#content ul#sommaire{
+    padding: 0;
+}
 article#page section#content ul#sommaire li a {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bold;
     color: #353535;
     padding: 5px 10px;
@@ -154,15 +157,12 @@ article#page section#content ul#sommaire li{
     list-style: none;
 }
 article#page section#content ul#sommaire li ul li a {
-    font-size: 1rem;
+    font-size: .8rem;
     font-weight: normal;
     color: var(--main);
     background-color: #fdf4d3;
     padding: 5px 10px;
     border-radius: 5px;
-}
-article#page section#content ul#sommaire li ul {
-    margin-bottom: 20px;
 }
 article#page section#content h2 {
     font-size: 3rem;
