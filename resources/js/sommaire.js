@@ -1,22 +1,30 @@
 const titles = document.querySelectorAll("h2");
-const sommaire = document.querySelector('#sommaire');
+const titlesh3 = document.querySelectorAll("h3");
 
 function setup() {
-    let ul = document.createElement("ul");
-    sommaire.appendChild(ul);
     Array.from(titles).forEach(title => {
-        let li = document.createElement("li");
-        ul.appendChild(li);
-
-        let a = document.createElement("a");
-        a.href = "#" + clean(title.innerText);
-        a.innerText = title.innerText;
-        li.appendChild(a);
+        title.id = clean(title.innerText);
+    })
+    Array.from(titlesh3).forEach(title => {
+        title.id = clean(title.innerText);
     })
 }
 function clean (string)
 {
     string = string.replaceAll(' ', '-');
+    string = string.toLowerCase();
+    string = string.replaceAll('é', 'e');
+    string = string.replaceAll('è', 'e');
+    string = string.replaceAll('ê', 'e');
+    string = string.replaceAll('à', 'a');
+    string = string.replaceAll('â', 'a');
+    string = string.replaceAll('î', 'i');
+    string = string.replaceAll('ô', 'o');
+    string = string.replaceAll('û', 'u');
+    string = string.replaceAll('ç', 'c');
+    string = string.replaceAll('ù', 'u');
+    string = string.replaceAll('\'', '');
+    string = string.replaceAll('?', '');
     return string;
 }
 

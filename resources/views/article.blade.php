@@ -17,6 +17,9 @@
         <nav id="summary"></nav>
         <section id="content">
             <h2 id="sommaire">Sommaire</h2>
+            @foreach($titles as $title)
+                {!! $title !!}
+            @endforeach
             {!! $article->html !!}
         </section>
     </article>

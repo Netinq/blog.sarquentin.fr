@@ -70,12 +70,38 @@ class HomeController extends Controller
             })->first();
         if ($article == null) return abort(404);
 
-
         preg_match_all('/<h[2-6]>(.*?)<\/h[2-6]>/i', $article->html, $titles);
-        dd($titles);
+        $titles = $titles[0];
+        $titles[0] = "<ul id='sommaire'>".$titles[0];
+        foreach ($titles as & $title) {
+            $next = next($titles);
+            if (Str::contains($next, 'h3') && Str::contains($title, 'h2')) {
+                $title = str_replace('<h2>', '<li><a href="#'.$this->toId($title).'">', $title);
+                $title = str_replace('</h2>', '</a><ul>', $title);
+            } else if (Str::contains($next, 'h2') && Str::contains($title, 'h3')) {
+                $title = str_replace('<h3>', '<li><a href="#'.$this->toId($title).'">', $title);
+                $title = str_replace('</h3>', '</a></li></ul>', $title);
+            } else if (Str::contains($title, 'h3')) {
+                $title = str_replace('<h3>', '<li><a href="#'.$this->toId($title).'">', $title);
+                $title = str_replace('</h3>', '</a></li>', $title);
+            } else {
+                $title = str_replace('<h2>', '<li><a href="#'.$this->toId($title).'">', $title);
+                $title = str_replace('</h2>', '</a></li>', $title);
+            }
+        }
+        array_push($titles, "</ul>");
 
         if ($article->published_at == null && !$article->link_only) return abort(403);
-        else return view('article', compact('article'));
+        else return view('article', compact('article', 'titles'));
+    }
+
+    private function toId($title) {
+        preg_match_all('/<h[2-6]>(.*?)<\/h[2-6]>/i', $title, $title);
+        $title = $title[1][0];
+        $title = str_replace(' ', '-', $title);
+        $title = str_replace('?', '', $title);
+        $title = Str::slug($title);
+        return $title;
     }
 
     public function search(Request $request) {

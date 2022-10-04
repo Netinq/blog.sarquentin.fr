@@ -4,6 +4,10 @@ body {
     position: relative;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 article#page {
     /*width: calc(100vw - var(--margin));*/
     /*margin: calc(var(--margin) / 2);*/
@@ -137,15 +141,40 @@ article#page section#content {
     overflow: hidden;
     cursor: auto;
 }
+article#page section#content ul#sommaire li a {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #353535;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+article#page section#content ul#sommaire li{
+    margin: 10px 0;
+    list-style: none;
+}
+article#page section#content ul#sommaire li ul li a {
+    font-size: 1rem;
+    font-weight: normal;
+    color: var(--main);
+    background-color: #fdf4d3;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+article#page section#content ul#sommaire li ul {
+    margin-bottom: 20px;
+}
 article#page section#content h2 {
     font-size: 3rem;
     color: #353535;
     margin: 25px 0 0 0;
+    scroll-margin-top: 185px;
 }
 article#page section#content h3 {
     font-size: 1.6rem;
     color: var(--main);
     margin: 0;
+    scroll-margin-top: 185px;
 }
 article#page section#content blockquote {
     background-color: #f3f3f3;
