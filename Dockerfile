@@ -24,8 +24,8 @@ RUN cd /usr/local/etc/php/conf.d/ && \
 RUN groupadd -g 1000 www
 RUN useradd -u 1000 -ms /bin/bash -g www www
 COPY --chown=www:www . /var/www/html
-RUN composer install --quiet --optimize-autoloader --no-dev
 WORKDIR /var/www/html
 USER www
+RUN composer install --quiet --optimize-autoloader --no-dev
 EXPOSE 9000
 CMD ["php-fpm"]
