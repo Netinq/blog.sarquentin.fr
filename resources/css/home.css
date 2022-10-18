@@ -116,7 +116,7 @@ main#home section#articles nav a img {
     main#home section#intro {
         flex-direction: column;
         justify-content: center;
-        height: 70vh;
+        height: 65vh;
         padding: 75px 0;
         box-sizing: border-box;
     }

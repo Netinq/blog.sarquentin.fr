@@ -40,9 +40,10 @@ a.article {
 a {
     text-decoration: initial !important;
 }
-.big-box {
+a.big-box {
     width: calc(100% / var(--diviser) * var(--big) - 20px);
     height: 45vh;
+    margin: 0;
 }
 .box {
     width: calc(100% / var(--diviser) - 20px);
@@ -118,15 +119,13 @@ article div span img {
     margin-right: 15px;
 }
 a.self-promo-link {
-    height: 100%;
-    margin: 10px;
     text-decoration: none !important;
 }
 
 div.self-promo {
     background: rgb(227,182,79);
     background: linear-gradient(90deg, rgba(227,182,79,1) 0%, rgba(227,136,79,1) 100%);
-    height: calc(100% - 20px);
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -213,6 +212,16 @@ div.self-promo div {
         width: calc(100% / var(--diviser) * var(--big) - 20px);
         width: calc(100% / var(--diviser) * 1 - 20px);
     }
+    div.self-promo img {
+        display: none;
+    }
+    div.self-promo h3 {
+        font-size: 1.2rem;
+        width: 100%;
+    }
+    div.self-promo p {
+        width: 100%;
+    }
 }
 
 @media (max-width: 991px) {
@@ -232,5 +241,8 @@ div.self-promo div {
     }
     div.self-promo p {
         width: 100%;
+    }
+    a.big-box article{
+        margin-top: 10px;
     }
 }
