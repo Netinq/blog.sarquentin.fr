@@ -10,7 +10,7 @@
         <img src="{{asset('img/home.png')}}" alt="Quentin Sar picture">
     </section>
     <section id="articles">
-        <nav><a href="{{route('news')}}">Nouveautés</a><a href="{{route('all')}}">Tous les articles</a><a href="{{route('short')}}">Articles courts</a><a href="{{route('dataactu')}}"><img src="{{asset('img/dataactu.png')}}" alt="">DataActu</a></nav>
+        <nav><a href="{{route('news')}}">Nouveautés</a><a href="{{route('all')}}">Tous les articles</a><a href="{{route('short')}}">Articles courts</a><a href="{{route('dataactu')}}" id="dataactu"><img src="{{asset('img/dataactu.png')}}" alt="DataActu">DataActu</a></nav>
         <div class="article-container">
             <div class="container-head">
                 @if(count($articles) > 0)

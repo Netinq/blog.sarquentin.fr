@@ -59,6 +59,7 @@ header#menu div.container div.nav form input {
     outline: none !important;
     cursor: text;
     padding: 15px 25px;
+    border-radius: 5px 0 0 5px;
 }
 header#menu div.container div.nav button {
     height: 100%;
@@ -66,6 +67,7 @@ header#menu div.container div.nav button {
     border: none;
     background-color: #fcfcfc;
     cursor: pointer;
+    border-radius: 0 5px 5px 0;
 }
 
 @media (max-width: 787px) {

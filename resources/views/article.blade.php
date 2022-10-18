@@ -13,13 +13,14 @@
                 <h1>{{$article->name}}</h1>
                 <span><img src="{{asset('img/time_light.svg')}}" alt="Time"> Temps de lecture {{$article->read_time}} min</span>
             </div>
+            <img id="meta" src="{{ asset('storage/'.str_replace('\\', '/', $article->image)) }}" alt="{{ $article->name }}">
         </header>
         <nav id="summary"></nav>
         <section id="content">
-            <h2 id="sommaire">Sommaire</h2>
-            @foreach($titles as $title)
-                {!! $title !!}
-            @endforeach
+{{--            <h2 id="sommaire">Sommaire</h2>--}}
+{{--            @foreach($titles as $title)--}}
+{{--                {!! $title !!}--}}
+{{--            @endforeach--}}
             {!! $article->html !!}
         </section>
     </article>
@@ -27,7 +28,6 @@
     @include('components.promo')
     </section>
     <script src="{{asset('js/summary.js')}}"></script>
-    <script src="{{asset('js/sommaire.js')}}"></script>
     <form method="POST" action="{{route('read')}}" id="read">
         @csrf
         <input hidden name="article_id" value="{{$article->id}}">
