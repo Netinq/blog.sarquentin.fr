@@ -231,6 +231,7 @@ div.self-promo div {
     a.self-promo-link {
         width: calc(100% / var(--diviser) * var(--big) - 20px);
         height: 45vh;
+        margin-top: 10px;
     }
     div.self-promo img {
         display: none;
@@ -241,8 +242,5 @@ div.self-promo div {
     }
     div.self-promo p {
         width: 100%;
-    }
-    a.big-box article{
-        margin-top: 10px;
     }
 }
