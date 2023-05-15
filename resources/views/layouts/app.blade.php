@@ -34,6 +34,8 @@
         <meta property='og:title' content="@hasSection('title')@yield('title')@else Le Blog Digital @endif" />
         <meta property="og:description" content="@yield('description')" />
         <meta property="og:image" content="@hasSection('image')@yield('image')@else{{asset('img/meta.png')}}@endif" />
+        <meta property="og:image:width" content="736" />
+        <meta property="og:image:height" content="385" />
         <meta property='og:type' content='website' />
         <meta property='og:url' content='https://blog.sarquentin.fr' />
         <meta property='og:site_name' content='{{Config::get('app.name')}}' />
