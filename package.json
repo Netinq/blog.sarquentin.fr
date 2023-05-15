@@ -17,6 +17,7 @@
     },
     "dependencies": {
         "autoprefixer": "^10.4.2",
+        "laravel-mix-purgecss": "^6.0.0",
         "postcss-import": "^14.0.2"
     }
 }
