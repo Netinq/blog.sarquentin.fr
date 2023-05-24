@@ -6,6 +6,7 @@
         <!-- Default meta -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+        <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
 
         <meta name='author' content='Quentin Sar, Netinq'>
         <meta name='owner' content='MONSIEUR QUENTIN SAR'>
@@ -21,11 +22,12 @@
 
         <link rel='shortcut icon' type='image/png' href='{{ asset('img/logo.png') }}'>
         <link rel="apple-touch-icon" href="{{ asset('img/logo.png') }}" />
+        <link rel="canonical" href="@hasSection('url')@yield('url')@else https://blog.sarquentin.fr @endif" />
 
         <!-- Twitter Card meta -->
         <meta name='twitter:card' content='summary_large_image'>
         <meta name="twitter:title" content="@hasSection('title')@yield('title')@else Le Blog Digital @endif" />
-        <meta name='twitter:url' content='https://blog.sarquentin.fr' />
+        <meta name='twitter:url' content='@hasSection('url')@yield('url')@else https://blog.sarquentin.fr @endif' />
         <meta name='twitter:domain' content='blog.sarquentin.fr' />
         <meta name="twitter:description" content="@yield('description')" />
         <meta name="twitter:image" content="@hasSection('image')@yield('image')@else{{asset('img/meta.png')}}@endif" />
@@ -37,7 +39,7 @@
         <meta property="og:image:width" content="736" />
         <meta property="og:image:height" content="385" />
         <meta property='og:type' content='website' />
-        <meta property='og:url' content='https://blog.sarquentin.fr' />
+        <meta property='og:url' content='@hasSection('url')@yield('url')@else https://blog.sarquentin.fr @endif' />
         <meta property='og:site_name' content='{{Config::get('app.name')}}' />
         <meta property="og:locale" content="fr_FR" />
 

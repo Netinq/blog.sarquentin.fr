@@ -3,6 +3,7 @@
 @section('title', $article->name)
 @section('description', $article->description)
 @section('image', asset('storage/'.str_replace('\\', '/', $article->image)))
+@section('url', route('article', ['link' => $article->link]))
 
 @section('content')
     @include('components.share', ['txt' => $article->name, 'url' => route('article', ['link' => $article->link])])
@@ -38,7 +39,6 @@
 @endsection
 
 @section('head')
-    <link rel="canonical" href="{{ route('article', ['link' => $article->link]) }}">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4501219983180544"
             crossorigin="anonymous"></script>
     <script type="application/ld+json">
