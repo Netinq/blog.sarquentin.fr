@@ -39,7 +39,7 @@
 @endsection
 
 @section('head')
-    <meta name="publish_date" property="og:publish_date" content="{{$article->published_at}}">
+    <meta name="publish_date" property="og:publish_date" content="{{\Carbon\Carbon::parse($article->published_at, DateTime::ISO8601)}}">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4501219983180544"
             crossorigin="anonymous"></script>
     <script type="application/ld+json">
