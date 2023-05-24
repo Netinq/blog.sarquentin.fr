@@ -10,7 +10,7 @@
     <article id="page">
         <header id="article-head" style="background-image: url('{{asset('storage/'.str_replace('\\', '/', $article->banner_image))}}')">
             <div>
-                <time class="published" datetime="{{$article->published_at}}">Publication le {{\Carbon\Carbon::parse($article->published_at)->translatedFormat('d F Y')}}</time>
+                <time class="published" datetime="{{\Carbon\Carbon::parse($article->published_at)->format(DateTime::ISO8601)}}">Publication le {{\Carbon\Carbon::parse($article->published_at)->translatedFormat('d F Y')}}</time>
                 <h1>{{$article->name}}</h1>
                 <span><img src="{{asset('img/time_light.svg')}}" alt="Time" height="25px" width="25px"> Temps de
                     lecture
