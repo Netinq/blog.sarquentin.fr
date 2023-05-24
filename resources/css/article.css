@@ -203,12 +203,15 @@ article#page section#content blockquote::before {
     height: 100%;
     background-color: var(--main);
 }
-article#page section#content p {
+article#page section#content p, article#page section#content ul li {
     font-size: 1.2rem;
     line-height: 1.8rem;
     color: #51656f;
     width: 100%;
     text-align: justify;
+}
+article#page section#content ul {
+    margin: 0;
 }
 article#page section#content p img {
     align-self: center;
@@ -255,7 +258,7 @@ section.promo-content {
     article#page section#content h3 {
         font-size: 1.4rem;
     }
-    article#page section#content p {
+    article#page section#content p, article#page section#content ul li {
         font-size: 1rem;
         line-height: 1.4rem;
     }

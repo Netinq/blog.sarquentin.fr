@@ -11,7 +11,9 @@
             <div>
                 <time class="published" datetime="{{$article->published_at}}">Publication le {{\Carbon\Carbon::parse($article->published_at)->translatedFormat('d F Y')}}</time>
                 <h1>{{$article->name}}</h1>
-                <span><img src="{{asset('img/time_light.svg')}}" alt="Time"> Temps de lecture {{$article->read_time}} min</span>
+                <span><img src="{{asset('img/time_light.svg')}}" alt="Time" height="25px" width="25px"> Temps de
+                    lecture
+                    {{$article->read_time}} min</span>
             </div>
             <img id="meta" src="{{ asset('storage/'.str_replace('\\', '/', $article->image)) }}" alt="{{ $article->name }}">
         </header>
@@ -28,11 +30,11 @@
     @include('components.promo')
     </section>
     <script src="{{asset('js/summary.js')}}"></script>
-    <form method="POST" action="{{route('read')}}" id="read">
-        @csrf
-        <input hidden name="article_id" value="{{$article->id}}">
-    </form>
-    <script src="{{asset('js/read_analytics.js')}}"></script>
+{{--    <form method="POST" action="{{route('read')}}" id="read">--}}
+{{--        @csrf--}}
+{{--        <input hidden name="article_id" value="{{$article->id}}">--}}
+{{--    </form>--}}
+{{--    <script src="{{asset('js/read_analytics.js')}}"></script>--}}
 @endsection
 
 @section('head')
