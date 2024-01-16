@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap:  https://www.google-analytics.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' 'unsafe-inline' https://*.google-analytics.com https://*.googletagmanager.com ;connect-src 'self' 'unsafe-inline'  https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; **script-src 'self' https://*.googletagmanager.com 'unsafe-inline' 'unsafe-eval';** ">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap:  https://www.google-analytics.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' 'unsafe-inline' https://*.google-analytics.com https://*.googletagmanager.com ;connect-src 'self' 'unsafe-inline'  https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; script-src 'self' https://*.googletagmanager.com 'unsafe-inline' 'unsafe-eval';** ">
         <!-- Default meta -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
