@@ -53,14 +53,14 @@
 
         <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
 
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132838792-2"></script>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-5KLH1RC7HP"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
-            gtag('config', 'UA-132838792-2');
+            gtag('config', 'G-5KLH1RC7HP');
         </script>
         <script type="application/ld+json">
         {
