@@ -27,7 +27,8 @@ RUN echo "memory_limit = -1" > /usr/local/etc/php/conf.d/docker-php-ram-limit.in
     && echo "error_reporting = E_ALL & ~E_DEPRECATED & ~E_NOTICE" > /usr/local/etc/php/conf.d/error_reporting.ini \
     && echo "display_errors = Off" > /usr/local/etc/php/conf.d/display_errors.ini \
     && echo "short_open_tag = Off" > /usr/local/etc/php/conf.d/disable_short_tags.ini \
-    && echo "date.timezone = Europe/Paris" > /usr/local/etc/php/conf.d/date_timezone.ini \
+    && echo "date.timezone = Europe/Paris" > /usr/local/etc/php/conf.d/date_timezone.ini
+
 # Création d'un utilisateur non root pour exécuter PHP-FPM
 RUN groupadd -g 1000 www
 RUN useradd -u 1000 -ms /bin/bash -g www www
