@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7e159757fbf7e4382f7fb4fd0153820b",
+    "content-hash": "a40bf808bc1d80bab46c43ca297cdb72",
     "packages": [
         {
             "name": "adityastic/voyager-config",
