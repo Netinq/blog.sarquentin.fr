@@ -1,7 +1,7 @@
 <a class="article {{ isset($big) ? 'big-box': 'box' }}" href="{{route('article', ['link' => $article->link])}}">
     <article>
         <div class="image" style="background-image: url('{{asset('storage/'.str_replace('\\', '/', $article->banner_image))}}')"></div>
-        <div>
+        <div class="content">
             <time class="published" datetime="{{$article->published_at}}">Publication le {{\Carbon\Carbon::parse($article->published_at)->translatedFormat('d F Y')}}</time>
             <h2>{{$article->name}}</h2>
             <span><img src="{{asset('img/time.svg')}}" alt="Time"> Temps de lecture {{$article->read_time}} min</span>

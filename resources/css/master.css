@@ -1,10 +1,13 @@
 :root {
-    --margin: 200px;
-    --main: #e3b64f;
+    --margin: 100px;
+    --padding: 75px;
+    --main: #5F5CFF;
+    --main-dark: #2F3349;
+    --border-radius: 20px;
     --diviser: 4;
     --article-margin: 40vw;
     --big: 2;
-    font-family: "Main";
+    font-family: "Poppins", sans-serif;
 }
 @media (max-width: 1200px) {
     :root {
@@ -31,6 +34,7 @@
 }
 * {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
+    font-family: "Poppins", sans-serif;
 }
 
 ::-webkit-scrollbar {

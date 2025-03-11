@@ -26,15 +26,15 @@ function setup() {
         bar.classList.add("bar");
         barbg.classList.add("bar-bg");
         elem.classList.add("title");
-        elem.onclick = () => {window.scroll({top: offset(title).top-75-50, behavior: 'smooth'});};
+        elem.onclick = () => {window.scroll({top: offset(title).top-200, behavior: 'smooth'});};
         elem.innerText = title.innerText;
         summary.appendChild(elem);
         elem.appendChild(barbg);
         barbg.appendChild(bar);
         if (index !=0)
         {
-            scrollPos.push([previous, offset(title).top-75-50])
-            previous = offset(title).top-75-50;
+            scrollPos.push([previous, offset(title).top-200])
+            previous = offset(title).top-200;
         }
         index++;
         if (index === Array.from(titles).length) {

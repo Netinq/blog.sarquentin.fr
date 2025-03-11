@@ -47,7 +47,7 @@ header#menu div.container div.nav img {
 header#menu div.container div.nav form button {
     height: 55px;
     width: 55px;
-    background-color: var(--main);
+    background-color: var(--main-dark);
     border: none;
     cursor: pointer;
 }
@@ -59,7 +59,7 @@ header#menu div.container div.nav form input {
     outline: none !important;
     cursor: text;
     padding: 15px 25px;
-    border-radius: 5px 0 0 5px;
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
 }
 header#menu div.container div.nav button {
     height: 100%;
@@ -67,7 +67,12 @@ header#menu div.container div.nav button {
     border: none;
     background-color: #fcfcfc;
     cursor: pointer;
-    border-radius: 0 5px 5px 0;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+header#menu div.container div.nav button img {
+    height: 20px;
+    margin-left: -5px;
+    margin-bottom: -5px;
 }
 
 @media (max-width: 787px) {

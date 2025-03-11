@@ -47,8 +47,8 @@ article#page header#article-head::before {
     left: 0;
     height: 100%;
     width: 100%;
-    background: rgb(227,182,79);
-    background: linear-gradient(135deg, rgba(227,182,79,1) 25%, rgba(227,182,79,0) 100%);
+    background: #BBB9F9;
+    background: linear-gradient(135deg, rgb(123, 120, 255) 25%, rgba(187,185,249,0) 100%);
     z-index: -1;
 }
 
@@ -66,20 +66,24 @@ article#page header#article-head img#meta {
     box-shadow: 0 0 20px rgba(48, 57, 62, 0.3);
 }
 article#page header#article-head div time{
-    font-family: 'Main';
-    color: #FFFFFF;
+    font-family: "Poppins", sans-serif;;
+    color: var(--main-dark);
     font-size: 1.2rem;
     margin-bottom: 5px;
+    background-color: rgba(238, 238, 255, 0.25);
+    border-radius: 10px;
+    border: 1px solid var(--main-dark);
+    padding: 10px 15px;
 }
 article#page header#article-head div h1{
-    font-family: 'Main';
+    font-family: "Poppins", sans-serif;
     color: #FFFFFF;
-    font-size: 2.8rem;
+    font-size: 2rem;
     margin: 0;
     width: 100%;
 }
 article#page header#article-head div span{
-    font-family: 'Main';
+    font-family: "Poppins", sans-serif;;
     color: #FFFFFF;
     font-size: 1.2rem;
     margin-top: 15px;
@@ -93,7 +97,7 @@ article#page nav {
     align-items: center;
     justify-content: space-between;
     flex-grow: 1;
-    height: 50px;
+    height: 75px;
     background-color: #FFFFFF;
     overflow: hidden;
 }
@@ -108,7 +112,7 @@ article#page nav button {
     height: 100%;
     border: none;
     text-align: left;
-    font-family: 'Main';
+    font-family: "Poppins", sans-serif;;
     background: none;
     font-size: .9rem;
     cursor: pointer;
@@ -174,7 +178,7 @@ article#page section#content ul#sommaire li ul li a {
     border-radius: 5px;
 }
 article#page section#content h2 {
-    font-size: 3rem;
+    font-size: 2.4rem;
     color: #353535;
     margin: 25px 0 0 0;
     scroll-margin-top: 185px;
@@ -185,10 +189,16 @@ article#page section#content h3 {
     margin: 0;
     scroll-margin-top: 185px;
 }
+article#page section#content a, article#page section#content a:visited {
+    color: var(--main);
+}
+article#page section#content strong, article#page section#content b {
+    font-weight: 600;
+}
 article#page section#content blockquote {
     background-color: #f3f3f3;
     border-radius: 10px;
-    padding: 25px;
+    padding: 0 25px;
     font-size: 1.2rem;
     margin: 0 0 15px;
     overflow: hidden;
@@ -199,12 +209,12 @@ article#page section#content blockquote::before {
     position: absolute;
     left: 0;
     top: 0;
-    width: 10px;
+    width: 4px;
     height: 100%;
     background-color: var(--main);
 }
 article#page section#content p, article#page section#content ul li {
-    font-size: 1.2rem;
+    font-size: 1rem;
     line-height: 1.8rem;
     color: #51656f;
     width: 100%;
@@ -229,12 +239,12 @@ section.promo-content {
 }
 @media (max-width: 1600px) {
     article#page header#article-head div h1{
-        font-size: 2.6rem;
+        font-size: 1.6rem;
     }
 }
 @media (max-width: 1400px) {
     article#page header#article-head div h1{
-        font-size: 2.4rem;
+        font-size: 1.4rem;
     }
 }
 @media (max-width: 1200px) {
@@ -242,7 +252,7 @@ section.promo-content {
         font-size: .8rem;
     }
     article#page header#article-head div h1{
-        font-size: 2.4rem;
+        font-size: 1.4rem;
     }
 }
 @media (max-width: 991px) {

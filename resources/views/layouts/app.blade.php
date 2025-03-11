@@ -1,4 +1,5 @@
-@section('description', "Retrouvez des articles parlant de l'univers du digital et plus particulièrement spécialisé dans les sites web.")
+@section('description', "Découvrez des articles spécialisés sur le DevOps, l'Infrastructure as Code, le Cloud, la
+performance web et l'automatisation. Analyses, tutoriels et veille technologique pour optimiser vos sites et applications.")
 
 <!DOCTYPE html>
 <html lang="fr">

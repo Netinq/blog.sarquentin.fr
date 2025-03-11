@@ -14,6 +14,8 @@ section#categories {
     position: relative;
     overflow: hidden;
     cursor: auto;
+    padding: 0 var(--padding);
+    box-sizing: border-box;
 }
 section#categories header#categories-head {
     background-position: center center;
@@ -27,6 +29,10 @@ section#categories header#categories-head {
     align-items: flex-start;
     justify-content: center;
     cursor: auto;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--main-dark);
+    overflow: hidden;
+    margin-top: 25px;
 }
 section#categories header#categories-head::before {
     content: ' ';
@@ -62,7 +68,7 @@ section#categories header#categories-head div {
     z-index: 10;
 }
 section#categories header#categories-head div h1{
-    font-family: 'Main';
+    font-family: "Poppins", sans-serif;;
     color: #FFFFFF;
     font-size: 4rem;
     margin: 0;
@@ -79,7 +85,7 @@ section#categories header#categories-head div img.logo{
     height: 100px;
 }
 section#categories header#categories-head div span{
-    font-family: 'Main';
+    font-family: "Poppins", sans-serif;;
     color: #FFFFFF;
     font-size: 1.2rem;
     display: flex;
@@ -87,7 +93,7 @@ section#categories header#categories-head div span{
     align-items: center;
 }
 section#categories header#categories-head div h1 span{
-    font-family: 'Main';
+    font-family: "Poppins", sans-serif;;
     color: #FFFFFF;
     font-size: 1.2rem;
     justify-content: flex-start;
@@ -113,7 +119,5 @@ section#categories header#categories-head div img{
 }
 
 section#categories section#articles {
-    width: calc(100% - var(--margin));
-    margin: 0 calc(var(--margin) / 2);
-    padding: 25px;
+    width: 100%;
 }
