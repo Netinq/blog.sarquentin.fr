@@ -218,7 +218,7 @@ article#page section#content p, article#page section#content ul li {
     line-height: 1.8rem;
     color: #51656f;
     width: 100%;
-    text-align: justify;
+    word-wrap: break-word;
 }
 article#page section#content ul {
     margin: 0;
@@ -278,14 +278,16 @@ section.promo-content {
 }
 @media (max-width: 787px) {
     article#page header#article-head div time{
+        font-family: "Poppins", sans-serif;;
         font-size: 1rem;
-        margin-left: 0;
+        margin-bottom: 5px;
+        padding: 5px 10px;
     }
     article#page header#article-head div h1{
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
     article#page header#article-head div span{
-        font-size: 1rem;
+        font-size: .9rem;
     }
     article#page section#content h2 {
         font-size: 1.6rem;

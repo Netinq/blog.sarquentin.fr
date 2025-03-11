@@ -127,7 +127,8 @@ main#home section#articles nav a img {
         font-size: 3rem;
     }
     main#home section#intro img {
-        max-width: 45vw;
+        order: 1;
+        max-width: 35vw;
     }
     main#home section#articles nav a {
         font-size: 1rem;
@@ -139,8 +140,7 @@ main#home section#articles nav a img {
     main#home section#intro {
         flex-direction: column;
         justify-content: center;
-        height: 65vh;
-        padding: 75px 0;
+        height: 50vh;
         box-sizing: border-box;
     }
     main#home section#intro div.title {
@@ -148,14 +148,10 @@ main#home section#articles nav a img {
         margin-top: 25px;
     }
     main#home section#intro div.title h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
     main#home section#intro div.title p {
-        font-size: 1.2rem;
-    }
-    main#home section#intro img {
-        order: 1;
-        max-width: 75vw;
+        font-size: .8rem;
     }
     main#home section#articles nav {
         width: 100%;
@@ -256,6 +252,13 @@ main#home section#articles nav a img {
     background-color: #e3b64f;
     color: #ffffff;
     font-weight: bold;
+}
+
+@media (max-width: 991px) {
+    :root {
+        --margin: 100px;
+        --padding: 25px;
+    }
 }
 
 @font-face {
@@ -1062,7 +1065,7 @@ article#page section#content p, article#page section#content ul li {
     line-height: 1.8rem;
     color: #51656f;
     width: 100%;
-    text-align: justify;
+    word-wrap: break-word;
 }
 
 article#page section#content ul {
@@ -1130,14 +1133,16 @@ section.promo-content {
 
 @media (max-width: 787px) {
     article#page header#article-head div time{
+        font-family: "Poppins", sans-serif;;
         font-size: 1rem;
-        margin-left: 0;
+        margin-bottom: 5px;
+        padding: 5px 10px;
     }
     article#page header#article-head div h1{
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
     article#page header#article-head div span{
-        font-size: 1rem;
+        font-size: .9rem;
     }
     article#page section#content h2 {
         font-size: 1.6rem;

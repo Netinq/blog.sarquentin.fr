@@ -116,7 +116,8 @@ main#home section#articles nav a img {
         font-size: 3rem;
     }
     main#home section#intro img {
-        max-width: 45vw;
+        order: 1;
+        max-width: 35vw;
     }
     main#home section#articles nav a {
         font-size: 1rem;
@@ -127,8 +128,7 @@ main#home section#articles nav a img {
     main#home section#intro {
         flex-direction: column;
         justify-content: center;
-        height: 65vh;
-        padding: 75px 0;
+        height: 50vh;
         box-sizing: border-box;
     }
     main#home section#intro div.title {
@@ -136,14 +136,10 @@ main#home section#articles nav a img {
         margin-top: 25px;
     }
     main#home section#intro div.title h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
     main#home section#intro div.title p {
-        font-size: 1.2rem;
-    }
-    main#home section#intro img {
-        order: 1;
-        max-width: 75vw;
+        font-size: .8rem;
     }
     main#home section#articles nav {
         width: 100%;
