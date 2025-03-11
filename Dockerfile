@@ -23,16 +23,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Création d'un utilisateur non root pour exécuter PHP-FPM
-RUN groupadd -g 1000 www && useradd -u 1000 -ms /bin/bash -g www www
-
-# Définition du répertoire de travail
-WORKDIR /var/www/html
+RUN groupadd -g 1000 www
+RUN useradd -u 1000 -ms /bin/bash -g www www
 
 # Copie de tout le projet AVANT l'installation de Composer
 COPY --chown=www:www . /var/www/html
 
-# Attribution des permissions pour éviter les problèmes avec PHP-FPM
-RUN chmod -R 755 /var/www/html
+# Définition du répertoire de travail
+WORKDIR /var/www/html
 
 # Passage à l'utilisateur non root
 USER www
