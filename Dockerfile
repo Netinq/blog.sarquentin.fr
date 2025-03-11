@@ -31,15 +31,15 @@ WORKDIR /var/www/html
 # Copie de tout le projet AVANT l'installation de Composer
 COPY --chown=www:www . /var/www/html
 
+# Attribution des permissions pour éviter les problèmes avec PHP-FPM
+RUN chmod -R 755 /var/www/html
+
 # Passage à l'utilisateur non root
 USER www
 
 # Installation des dépendances Composer en mode production
 RUN composer install --no-dev --prefer-dist --no-interaction --optimize-autoloader
 
-# Attribution des permissions pour éviter les problèmes avec PHP-FPM
-RUN chown -R www:www /var/www/html \
-    && chmod -R 755 /var/www/html
 
 # Exposition du port PHP-FPM
 EXPOSE 9000
