@@ -40,7 +40,7 @@ section#categories header#categories-head::before {
 section.news header#categories-head::before {background: rgb(227,153,79);
     background: linear-gradient(135deg, rgba(227,153,79,1) 0%, rgba(174,114,163,0.5046393557422969) 50%, rgba(227,79,127,0) 100%);
 }
-section.dataactu header#categories-head::before {background: rgb(227,79,129);
+section.iacactu header#categories-head::before {background: rgb(227,79,129);
     background: linear-gradient(135deg, rgba(227,79,129,1) 0%, rgba(108,116,183,0.7483368347338936) 26%, rgba(107,183,185,0.4990371148459384) 50%, rgba(255,255,255,0) 100%);
 }
 section.all header#categories-head::before {
@@ -68,7 +68,7 @@ section#categories header#categories-head div h1{
     margin: 0;
     width: 75%;
 }
-section#categories header#categories-head div.dataactu-head{
+section#categories header#categories-head div.iacactu-head{
     display: flex;
     flex-direction: row;
     justify-content: space-between;

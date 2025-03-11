@@ -12,6 +12,8 @@ class Article extends Model implements Sitemapable
 {
     use HasFactory;
 
+    protected $fillable = ['name', 'published_at', 'editor', 'image', 'pin', 'link_only', 'description', 'banner_image', 'keywords'];
+
     public function categories() {
         return $this->belongsToMany('\App\Models\Category', 'article_categories', 'article_id', 'category_id');
     }

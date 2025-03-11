@@ -11,8 +11,8 @@
     </section>
     <section id="articles">
         <nav><a href="{{route('news')}}">Nouveautés</a><a href="{{route('all')}}">Tous les articles</a><a
-                href="{{route('short')}}">Articles courts</a><a href="{{route('dataactu')}}" id="dataactu"><img
-                    src="{{asset('img/dataactu.png')}}" alt="DataActu" height="15px" width="17.6px">DataActu</a></nav>
+                href="{{route('short')}}">Articles courts</a><a href="{{route('iacactu')}}" id="iacactu"><img
+                    src="{{asset('img/iacactu.png')}}" alt="IAC Actu" height="15px" width="17.6px">IAC Actu</a></nav>
         <div class="article-container">
             <div class="container-head">
                 @if(count($articles) > 0)

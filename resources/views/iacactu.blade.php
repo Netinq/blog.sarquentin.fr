@@ -1,12 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-    <section id="categories" class="dataactu">
+    <section id="categories" class="iacactu">
         <header id="categories-head" style="background-image: url('{{asset('img/news.jpg')}}')">
-            <div class="dataactu-head">
-                <h1>DataActu
-<span>Quelle est l'évolution des données personnelles au sein de notre quotidien en France ?</span></h1>
-                <img src="{{asset('img/dataactu.png')}}" alt="Logo DataActu" class="logo">
+            <div class="iacactu-head">
+                <h1>IAC Actus
+<span>Retrouve une veille technologique hebdomadaire sur les évolutions et les tendances de l'IAC
+    (Infrastructure as Code)</span></h1>
+                <img src="{{asset('img/iacactu.png')}}" alt="Logo DataActu" class="logo">
             </div>
         </header>
         <section id="articles">

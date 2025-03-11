@@ -10,6 +10,8 @@ class ArticleContent extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['article_id', 'markdown', 'html'];
+
     protected static function boot()
     {
         parent::boot();
