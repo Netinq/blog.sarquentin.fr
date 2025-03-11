@@ -18,3 +18,7 @@ Route::post('/read', [HomeController::class, 'read_time'])->name('read');
 Route::group(['prefix' => 'gestion'], function () {
     Voyager::routes();
 });
+
+Route::get('/sitemap.xml', function() {
+    return response()->view('sitemap')->header('Content-Type', 'text/xml');
+})->name('sitemap');

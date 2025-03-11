@@ -20,7 +20,7 @@ performance web et l'automatisation. Analyses, tutoriels et veille technologique
 
         <meta name='language' content='FR'>
         <meta name='target' content='all'>
-        <meta name='theme-color' content='#e3b64f'>
+        <meta name='theme-color' content='#2F3349'>
 
         <link rel='shortcut icon' type='image/png' href='{{ asset('img/logo.png') }}'>
         <link rel="apple-touch-icon" href="{{ asset('img/logo.png') }}" />

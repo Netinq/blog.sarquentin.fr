@@ -55,6 +55,6 @@ class GenerateSitemap extends Command
                 ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
                 ->setPriority(0.7))
             ->add(Article::published()->get())
-            ->writeToFile(public_path('sitemap.xml'));
+            ->writeToFile(resource_path('views/sitemap.blade.php'));
     }
 }

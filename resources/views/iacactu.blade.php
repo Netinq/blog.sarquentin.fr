@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title', 'IAC Actus')
+@section('description', 'Retrouve une veille technologique hebdomadaire sur les évolutions et les tendances de l\'IAC (Infrastructure as Code)')
+@section('image', asset('img/IACACTUS_Meta.jpg'))
+
 @section('content')
     <section id="categories" class="iacactu">
         <header id="categories-head" style="background-image: url('{{asset('img/news.jpg')}}')">
