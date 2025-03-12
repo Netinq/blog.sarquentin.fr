@@ -60,5 +60,4 @@ class GestionPanelProvider extends PanelProvider
                 \BezhanSalleh\FilamentGoogleAnalytics\FilamentGoogleAnalyticsPlugin::make()
             ]);
     }
-    }
 }
