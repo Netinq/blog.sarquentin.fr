@@ -72,7 +72,7 @@
 }
 
 ::selection {
-    background-color: #e3b64f;
+    background-color: var(--main);
     color: #ffffff;
     font-weight: bold;
 }

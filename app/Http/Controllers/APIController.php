@@ -51,4 +51,44 @@ class APIController extends Controller
             ]
         ]);
     }
+    public function createPost(Request $request)
+    {
+        $authHeader = $request->header('Authorization');
+
+        // Vérifier que le token correspond à celui défini dans .env
+        if (!$authHeader || $authHeader !== 'Bearer ' . env('API_SECRET_TOKEN')) {
+            return response()->json(['message' => 'Unauthorized'], 401);
+        }
+
+        $category = Category::firstOrCreate([
+            'name' => $request->category
+        ]);
+
+        $article = Article::create([
+            'name' => $request->name,
+            'editor' => 1,
+            'published_at' => now(),
+            'image' => $request->image,
+            'pin' => 1,
+            'link_only' => 0,
+            'description' => $request->description,
+            'banner_image' => $request->banner_image
+        ]);
+
+        $article->categories()->attach($category->id);
+
+        $content = ArticleContent::create([
+            'article_id' => $article->id,
+            'markdown' => $request->markdown
+        ]);
+
+        return response()->json([
+            'message' => 'Article created',
+            'data' => [
+                'title' => $request->title,
+                'content' => $request->content,
+                'category' => $category->name
+            ]
+        ]);
+    }
 }

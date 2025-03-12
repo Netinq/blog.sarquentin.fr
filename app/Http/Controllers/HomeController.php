@@ -36,15 +36,6 @@ class HomeController extends Controller
         $articles = Article::published()->orderBy('published_at', 'desc')->get();
         return view('all', compact('articles'));
     }
-    public function iacactu()
-    {
-        $articles = Article::published()->with('categories')
-            ->whereHas('categories', function($query) {
-                $query->where('name', 'LIKE', 'IAC Actus');
-            })
-            ->orderBy('published_at', 'desc')->get();
-        return view('iacactu', compact('articles'));
-    }
     public function short()
     {
         $articles = Article::published()

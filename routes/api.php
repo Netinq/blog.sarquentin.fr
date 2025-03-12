@@ -19,3 +19,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('/createIACPost', [\App\Http\Controllers\APIController::class, 'createIACPost']);
+Route::post('/createPost', [\App\Http\Controllers\APIController::class, 'createPost']);

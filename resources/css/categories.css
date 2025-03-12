@@ -56,6 +56,9 @@ section.all header#categories-head::before {
 section.short header#categories-head::before {background: rgb(227,151,79);
     background: linear-gradient(135deg, rgba(227,151,79,1) 0%, rgba(183,108,180,0.7483368347338936) 26%, rgba(107,183,185,0.4990371148459384) 50%, rgba(255,255,255,0) 100%);
 }
+section.logistiqueautomatise header#categories-head::before {background: rgb(227,79,129);
+    background: linear-gradient(to right, rgba(238, 9, 121, 0.75), rgba(255, 106, 0, 0.25));
+}
 
 section#categories header#categories-head div {
     display: flex;
@@ -91,6 +94,7 @@ section#categories header#categories-head div span{
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 50%;
 }
 section#categories header#categories-head div h1 span{
     font-family: "Poppins", sans-serif;;
@@ -103,6 +107,17 @@ section#categories header#categories-head div img{
     height: 25px;
     margin-right: 15px;
 }
+@media (max-width: 1200px) {
+    section#categories header#categories-head div span{
+        max-width: 80%;
+    }
+}
+@media (max-width: 991px) {
+    section#categories header#categories-head div span{
+        display: none;
+    }
+}
+
 @media (max-width: 787px) {
     section#categories header#categories-head div h1{
         font-size: 2rem;
