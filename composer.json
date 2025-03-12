@@ -7,6 +7,8 @@
     "require": {
         "php": "^8.0",
         "adityastic/voyager-config": "dev-main",
+        "bezhansalleh/filament-google-analytics": "^2.1",
+        "bostjanob/filament-file-manager": "^0.1.0",
         "filament/filament": "3.3",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^v11.44.2",

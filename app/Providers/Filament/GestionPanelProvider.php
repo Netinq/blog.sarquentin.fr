@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Pages\PublicFileManager;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -34,6 +35,7 @@ class GestionPanelProvider extends PanelProvider
             ->discoverPages(in: app_path('Filament/Gestion/Pages'), for: 'App\\Filament\\Gestion\\Pages')
             ->pages([
                 Pages\Dashboard::class,
+                PublicFileManager::class
             ])
             ->discoverWidgets(in: app_path('Filament/Gestion/Widgets'), for: 'App\\Filament\\Gestion\\Widgets')
             ->widgets([
@@ -53,6 +55,9 @@ class GestionPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
+            ])
+            ->plugins([
+                \BezhanSalleh\FilamentGoogleAnalytics\FilamentGoogleAnalyticsPlugin::make()
             ]);
     }
 }
