@@ -43,5 +43,4 @@ RUN php artisan filament:optimize
 EXPOSE 8000
 
 # Lancement du service
-CMD ["php", "artisan", "octane:start", "--server=swoole", "--host=0.0.0.0", "--port=8000", "--workers=2",
-"--task-workers=2"]
+CMD ["php", "artisan", "octane:start", "--server=swoole", "--host=0.0.0.0", "--port=8000", "--workers=2"]
