@@ -3,7 +3,7 @@ FROM php:8.3-cli
 
 # Installation des dépendances système et des extensions PHP
 RUN apt-get update && apt-get install -y libpng-dev libjpeg62-turbo-dev \
-    libfreetype6-dev locales zip git curl libonig-dev libzip-dev unzip  \
+    libfreetype6-dev locales zip git curl libonig-dev libzip-dev unzip libicu-dev  \
     && docker-php-ext-configure gd --with-jpeg \
     && docker-php-ext-install pdo pdo_mysql zip exif gd intl \
     && docker-php-ext-install pcntl \
