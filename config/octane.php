@@ -52,6 +52,8 @@ return [
     */
 
     'https' => env('OCTANE_HTTPS', false),
+    'workers' => env('OCTANE_WORKERS', 2),
+    'garbage_collector' => env('OCTANE_GARBAGE_COLLECTOR', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -220,5 +222,6 @@ return [
     */
 
     'max_execution_time' => 30,
+    'max_requests' => 1000,
 
 ];
