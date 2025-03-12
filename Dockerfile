@@ -1,22 +1,13 @@
 # Utilisation de PHP 8.4-FPM comme base
-FROM php:8.4-fpm
+FROM php:8.4-cli
 
 # Installation des dépendances système et des extensions PHP
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential \
-    libpng-dev \
-    libjpeg62-turbo-dev \
-    libfreetype6-dev \
-    locales \
-    zip \
-    jpegoptim optipng pngquant gifsicle \
-    git \
-    curl \
-    libonig-dev \
-    libzip-dev \
+RUN apt-get update && apt-get install -y libpng-dev libjpeg62-turbo-dev \
+    libfreetype6-dev locales zip git curl libonig-dev libzip-dev unzip \
     && docker-php-ext-configure gd --with-jpeg \
     && docker-php-ext-install pdo pdo_mysql zip exif gd \
-    && docker-php-ext-enable pdo_mysql gd \
+    && pecl install swoole \
+    && docker-php-ext-enable swoole \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Installation de Composer
@@ -47,11 +38,7 @@ RUN composer install --no-dev --prefer-dist --no-interaction --optimize-autoload
 
 
 # Exposition du port PHP-FPM
-EXPOSE 9000
-
-# Healthcheck pour surveiller l'état de PHP-FPM
-HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
-  CMD php-fpm --test || exit 1
+EXPOSE 8080
 
 # Lancement du service PHP-FPM
-ENTRYPOINT ["php-fpm"]
+CMD ["php", "artisan", "octane:start", "--server=swoole", "--host=0.0.0.0", "--port=8000"]
