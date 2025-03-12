@@ -5,7 +5,7 @@ FROM php:8.3-cli
 RUN apt-get update && apt-get install -y libpng-dev libjpeg62-turbo-dev \
     libfreetype6-dev locales zip git curl libonig-dev libzip-dev unzip  \
     && docker-php-ext-configure gd --with-jpeg \
-    && docker-php-ext-install pdo pdo_mysql zip exif gd \
+    && docker-php-ext-install pdo pdo_mysql zip exif gd intl \
     && docker-php-ext-install pcntl \
     && pecl install swoole \
     && docker-php-ext-enable swoole \
@@ -36,6 +36,7 @@ USER www
 
 # Installation des dépendances Composer en mode production
 RUN composer install --no-dev --prefer-dist --no-interaction --optimize-autoloader
+RUN php artisan filament:optimize
 
 
 # Exposition du port PHP-FPM
