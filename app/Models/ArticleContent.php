@@ -30,4 +30,8 @@ class ArticleContent extends Model
     public function lastUpdate() {
         return $this->hasOne(ArticleContent::class)->latest();
     }
+
+    public function article() {
+        return $this->belongsTo(Article::class);
+    }
 }

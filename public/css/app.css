@@ -1023,6 +1023,7 @@ article#page section#content h2 {
     color: #353535;
     margin: 25px 0 0 0;
     scroll-margin-top: 185px;
+    font-weight: bold;
 }
 
 article#page section#content h3 {
@@ -1030,6 +1031,19 @@ article#page section#content h3 {
     color: var(--main);
     margin: 0;
     scroll-margin-top: 185px;
+    font-weight: 700;
+}
+
+article#page section#content p {
+    font-size: 1rem;
+    line-height: 1.8rem;
+    color: #51656f;
+    width: 100%;
+    word-wrap: break-word;
+    -webkit-margin-before: 1em;
+            margin-block-start: 1em;
+    -webkit-margin-after: 1em;
+            margin-block-end: 1em;
 }
 
 article#page section#content a, article#page section#content a:visited {
@@ -1048,6 +1062,14 @@ article#page section#content blockquote {
     margin: 0 0 15px;
     overflow: hidden;
     position: relative;
+    -webkit-margin-before: 1em;
+            margin-block-start: 1em;
+    -webkit-margin-after: 1em;
+            margin-block-end: 1em;
+}
+
+article#page section#content blockquote p {
+    display: block;
 }
 
 article#page section#content blockquote::before {
@@ -1060,7 +1082,7 @@ article#page section#content blockquote::before {
     background-color: var(--main);
 }
 
-article#page section#content p, article#page section#content ul li {
+article#page section#content ul li {
     font-size: 1rem;
     line-height: 1.8rem;
     color: #51656f;

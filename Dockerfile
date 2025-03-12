@@ -39,8 +39,8 @@ RUN composer install --no-dev --prefer-dist --no-interaction --optimize-autoload
 RUN php artisan filament:optimize
 
 
-# Exposition du port PHP-FPM
-EXPOSE 8080
+# Exposition du port
+EXPOSE 8000
 
-# Lancement du service PHP-FPM
+# Lancement du service
 CMD ["php", "artisan", "octane:start", "--server=swoole", "--host=0.0.0.0", "--port=8000"]

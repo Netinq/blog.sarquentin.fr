@@ -182,12 +182,23 @@ article#page section#content h2 {
     color: #353535;
     margin: 25px 0 0 0;
     scroll-margin-top: 185px;
+    font-weight: bold;
 }
 article#page section#content h3 {
     font-size: 1.6rem;
     color: var(--main);
     margin: 0;
     scroll-margin-top: 185px;
+    font-weight: 700;
+}
+article#page section#content p {
+    font-size: 1rem;
+    line-height: 1.8rem;
+    color: #51656f;
+    width: 100%;
+    word-wrap: break-word;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
 }
 article#page section#content a, article#page section#content a:visited {
     color: var(--main);
@@ -203,6 +214,11 @@ article#page section#content blockquote {
     margin: 0 0 15px;
     overflow: hidden;
     position: relative;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+}
+article#page section#content blockquote p {
+    display: block;
 }
 article#page section#content blockquote::before {
     content: ' ';
@@ -213,7 +229,7 @@ article#page section#content blockquote::before {
     height: 100%;
     background-color: var(--main);
 }
-article#page section#content p, article#page section#content ul li {
+article#page section#content ul li {
     font-size: 1rem;
     line-height: 1.8rem;
     color: #51656f;
