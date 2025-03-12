@@ -7,14 +7,14 @@
     "require": {
         "php": "^8.0",
         "adityastic/voyager-config": "dev-main",
+        "filament/filament": "3.3",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^v11.44.2",
         "laravel/octane": "^2.8",
         "laravel/sanctum": "^v4.0.8",
         "laravel/tinker": "^2.5",
         "orangehill/iseed": "^3.0",
-        "spatie/laravel-sitemap": "^7.3.5",
-        "tcg/voyager": "^1.8.0"
+        "spatie/laravel-sitemap": "^7.3.5"
     },
     "require-dev": {
         "spatie/laravel-ignition": "^2.9.1",
@@ -39,7 +39,8 @@
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi"
+            "@php artisan package:discover --ansi",
+            "@php artisan filament:upgrade"
         ],
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force"

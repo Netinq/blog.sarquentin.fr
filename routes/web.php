@@ -14,7 +14,3 @@ Route::get('/articles/{link}', [HomeController::class, 'article'])->name('articl
 Route::get('/legal', function() {return view('legal');})->name('legal');
 
 Route::post('/read', [HomeController::class, 'read_time'])->name('read');
-
-Route::group(['prefix' => 'gestion'], function () {
-    Voyager::routes();
-});

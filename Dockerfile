@@ -1,11 +1,12 @@
 # Utilisation de PHP 8.4-FPM comme base
-FROM php:8.4-cli
+FROM php:8.3-cli
 
 # Installation des dépendances système et des extensions PHP
 RUN apt-get update && apt-get install -y libpng-dev libjpeg62-turbo-dev \
-    libfreetype6-dev locales zip git curl libonig-dev libzip-dev unzip \
+    libfreetype6-dev locales zip git curl libonig-dev libzip-dev unzip  \
     && docker-php-ext-configure gd --with-jpeg \
     && docker-php-ext-install pdo pdo_mysql zip exif gd \
+    && docker-php-ext-install pcntl \
     && pecl install swoole \
     && docker-php-ext-enable swoole \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
