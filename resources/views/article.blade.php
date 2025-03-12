@@ -20,10 +20,6 @@
         </header>
         <nav id="summary"></nav>
         <section id="content">
-{{--            <h2 id="sommaire">Sommaire</h2>--}}
-{{--            @foreach($titles as $title)--}}
-{{--                {!! $title !!}--}}
-{{--            @endforeach--}}
             {!! $article->html !!}
         </section>
     </article>
@@ -31,11 +27,6 @@
     @include('components.promo')
     </section>
     <script src="{{asset('js/summary.js')}}"></script>
-{{--    <form method="POST" action="{{route('read')}}" id="read">--}}
-{{--        @csrf--}}
-{{--        <input hidden name="article_id" value="{{$article->id}}">--}}
-{{--    </form>--}}
-{{--    <script src="{{asset('js/read_analytics.js')}}"></script>--}}
 @endsection
 
 @section('head')

@@ -32,8 +32,7 @@ class APIController extends Controller
             'pin' => 1,
             'link_only' => 0,
             'description' => $request->description,
-            'banner_image' => $request->banner_image,
-            'keywords' => $request->keywords
+            'banner_image' => $request->banner_image
         ]);
 
         $article->categories()->attach($category->id);
