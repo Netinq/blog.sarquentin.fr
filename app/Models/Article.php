@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 use Spatie\Sitemap\Contracts\Sitemapable;
 use Spatie\Sitemap\Tags\Url;
 
@@ -21,10 +22,11 @@ class Article extends Model implements Sitemapable
     {
         parent::boot();
         static::saving(function($article) {
-            $name = $article->name;
-            $clean = str_replace(' ', '-', $name);
-            $clean = strtr(utf8_decode($clean), utf8_decode('àáâãäçèéêëìíîïñòóôõöùúûüýÿÀÁÂÃÄÇÈÉÊËÌÍÎÏÑÒÓÔÕÖÙÚÛÜÝ'), 'aaaaaceeeeiiiinooooouuuuyyAAAAACEEEEIIIINOOOOOUUUUY');
-            $article->link = preg_replace('/[^A-Za-z0-9\-]/', '', $clean);
+            if (is_null($article->link)) {
+                $name = $article->name;
+                $slug = Str::slug($name);
+                $article->link = $slug;
+            }
         });
     }
 
