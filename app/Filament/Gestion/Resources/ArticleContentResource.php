@@ -34,7 +34,7 @@ class ArticleContentResource extends Resource
                     ->required()
                     ->columnSpanFull(),
                 HtmlPreview::make('html')
-                    ->required()
+                    ->disabled()
                     ->columnSpanFull(),
             ]);
     }
