@@ -22,11 +22,9 @@ class Article extends Model implements Sitemapable
     {
         parent::boot();
         static::saving(function($article) {
-            if (is_null($article->link)) {
-                $name = $article->name;
-                $slug = Str::slug($name);
-                $article->link = $slug;
-            }
+            $name = $article->name;
+            $slug = Str::slug($name);
+            $article->link = $slug;
         });
     }
 
