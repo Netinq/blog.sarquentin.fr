@@ -10,7 +10,11 @@ class PublicFileManager extends FileManager
 
     protected string $disk = 'public';
 
-    protected $queryString = ['path'];
+    protected function getListeners()
+    {
+        return array_merge(parent::getListeners(), [
+            'updatePath' => '$refresh',
+        ]);
+    }
 
-    public string $path = '';
 }
