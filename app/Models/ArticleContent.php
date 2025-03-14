@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Support\MarkdownParser;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Mail\Markdown;
@@ -16,7 +17,7 @@ class ArticleContent extends Model
     {
         parent::boot();
         static::saving(function ($article) {
-            $article->html = Markdown::parse($article->markdown);
+            $article->html = MarkdownParser::parse($article->markdown);
         });
         static::saved(function ($article) {
             $words = str_word_count(strip_tags($article->html));
