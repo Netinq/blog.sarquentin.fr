@@ -40,6 +40,7 @@ class ArticleResource extends Resource
                 Forms\Components\Toggle::make('link_only')
                     ->required(),
                 Forms\Components\TextInput::make('link')
+                    ->disabled()
                     ->maxLength(255),
                 Forms\Components\Textarea::make('description')
                     ->required()
