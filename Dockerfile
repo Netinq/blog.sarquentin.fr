@@ -36,6 +36,7 @@ USER www
 # Installation des dépendances Composer en mode production
 RUN composer install --no-dev --prefer-dist --no-interaction --optimize-autoloader
 RUN php artisan filament:optimize
+RUN php artisan storage:link
 
 
 # Exposition du port
