@@ -128,27 +128,38 @@ main#home section#articles nav a img {
     main#home section#intro {
         flex-direction: column;
         justify-content: center;
-        height: 50vh;
+        height: auto;
+        padding: 25px 20px;
         box-sizing: border-box;
+    }
+    main#home section#intro img {
+        display: none;
     }
     main#home section#intro div.title {
         order: 2;
-        margin-top: 25px;
+        margin-top: 0;
     }
     main#home section#intro div.title h1 {
         font-size: 2rem;
     }
     main#home section#intro div.title p {
         font-size: .8rem;
+        max-width: 100%;
     }
     main#home section#articles nav {
         width: 100%;
         overflow-y: scroll;
         scrollbar-width: none;
         -ms-overflow-style: none;
+        column-gap: 10px;
+        row-gap: 10px;
     }
     main#home section#articles nav::-webkit-scrollbar {
         width: 0;
         height: 0;
+    }
+    main#home section#articles nav a {
+        font-size: .9rem;
+        padding: 10px 15px;
     }
 }

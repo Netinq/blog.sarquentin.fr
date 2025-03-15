@@ -21,15 +21,15 @@
     :root {
         --diviser: 2;
         --big: 1;
-        --margin: 100px;
-        --article-margin: var(--margin);
+        --margin: 80px;
+        --padding: 25px;
+        --article-margin: 80px;
     }
 }
 @media (max-width: 787px) {
     :root {
         --diviser: 1;
         --big: 1;
-        --margin: 50px;
     }
 }
 * {
@@ -75,11 +75,4 @@
     background-color: var(--main);
     color: #ffffff;
     font-weight: bold;
-}
-
-@media (max-width: 991px) {
-    :root {
-        --margin: 100px;
-        --padding: 25px;
-    }
 }

@@ -245,3 +245,26 @@ div.self-promo div {
         width: 100%;
     }
 }
+
+@media (max-width: 787px) {
+    a.box, a.big-box {
+        height: auto;
+        width: 100%;
+    }
+    article div.image {
+        height: 15vh;
+    }
+    a.box article div h2, a.big-box article div h2 {
+        font-size: 1rem;
+    }
+    a.box article div time, a.big-box article div time {
+        font-size: .8rem;
+    }
+    a.box article div span, a.big-box article div span {
+        font-size: .8rem;
+    }
+    a.box article div span img, a.big-box article div span img {
+        height: 15px;
+        margin-right: 5px;
+    }
+}
