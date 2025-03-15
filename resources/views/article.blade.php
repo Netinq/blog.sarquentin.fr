@@ -4,7 +4,6 @@
 @section('description', $article->description)
 @section('image', asset('storage/'.str_replace('\\', '/', $article->image)))
 @section('url', route('article', ['link' => $article->link]))
-
 @section('content')
     @include('components.share', ['txt' => $article->name, 'url' => route('article', ['link' => $article->link])])
     <article id="page">
@@ -26,13 +25,11 @@
     <section class="promo-content">
     @include('components.promo')
     </section>
-    <script src="{{asset('js/summary.js')}}"></script>
+    <script src="{{asset('js/summary.js')}}" defer></script>
 @endsection
 
 @section('head')
     <meta name="publish_date" property="og:publish_date" content="{{\Carbon\Carbon::parse($article->published_at)->format(DateTime::ISO8601)}}">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4501219983180544"
-            crossorigin="anonymous"></script>
     <script type="application/ld+json">
             {
                 "@context" : "https://schema.orrg",
@@ -60,4 +57,10 @@
                 "mainEntityOfPage" : "{!! route('article', ['link' => $article->link]) !!}"
             }
     </script>
+    <link
+        rel="preload"
+        href="{{asset('storage/'.str_replace('\\', '/', $article->banner_image))}}"
+        as="image"
+        fetchpriority="high"
+    />
 @endsection

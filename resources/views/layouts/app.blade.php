@@ -56,8 +56,8 @@ performance web et l'automatisation. Analyses, tutoriels et veille technologique
         <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
 
         <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-5KLH1RC7HP"></script>
-        <script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-5KLH1RC7HP" defer></script>
+        <script defer>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());

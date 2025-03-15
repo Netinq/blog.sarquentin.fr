@@ -201,7 +201,7 @@ article#page section#content p {
     margin-block-end: 1em;
 }
 article#page section#content a, article#page section#content a:visited {
-    color: var(--main);
+    color: var(--main-contrast);
 }
 article#page section#content strong, article#page section#content b {
     font-weight: 600;

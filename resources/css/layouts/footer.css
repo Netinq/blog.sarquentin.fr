@@ -68,7 +68,7 @@ footer .list .elem .point {
     margin-left: 25px;
 }
 footer .list .elem .link {
-    color: #71ACFA;
+    color: var(--main-contrast);
     text-decoration: underline;
 }
 footer .list .elem .point::after
