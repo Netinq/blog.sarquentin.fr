@@ -1,5 +1,10 @@
-# Utilisation de PHP 8.4-FPM comme base
-FROM php:8.3-cli
+ARG PHP_VERSION=8.3
+
+FROM php:${PHP_VERSION}-cli as base
+
+ARG USER=www
+ARG UID=1000
+ARG GID=1000
 
 # Installation des dépendances système et des extensions PHP
 RUN apt-get update && apt-get install -y libpng-dev libjpeg62-turbo-dev \
@@ -20,24 +25,27 @@ RUN echo "memory_limit = -1" > /usr/local/etc/php/conf.d/docker-php-ram-limit.in
     && echo "short_open_tag = Off" > /usr/local/etc/php/conf.d/disable_short_tags.ini \
     && echo "date.timezone = Europe/Paris" > /usr/local/etc/php/conf.d/date_timezone.ini
 
-# Création d'un utilisateur non root pour exécuter PHP-FPM
-RUN groupadd -g 1000 www
-RUN useradd -u 1000 -ms /bin/bash -g www www
+RUN groupadd -g ${GID} ${USER}
+RUN useradd -u ${UID} -ms /bin/bash -g ${USER} ${USER}
 
-# Copie de tout le projet AVANT l'installation de Composer
-COPY --chown=www:www . /var/www/html
-
-# Définition du répertoire de travail
 WORKDIR /var/www/html
 
-# Passage à l'utilisateur non root
-USER www
+FROM base AS production
+USER root
 
-# Installation des dépendances Composer en mode production
+# Installation de Composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
+# Copie et installation des dépendances Composer (en mode prod)
+COPY --chown=${USER}:${USER} . /var/www
+WORKDIR /var/www
+
 RUN composer install --no-dev --prefer-dist --no-interaction --optimize-autoloader
-RUN php artisan filament:optimize
-RUN php artisan storage:link
 
+# Préparation de Laravel
+USER ${USER}
+RUN php artisan optimize && \
+    php artisan storage:link
 
 # Exposition du port
 EXPOSE 8000
